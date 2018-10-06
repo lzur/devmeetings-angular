@@ -7,15 +7,21 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   products: Product[] = [
-    {name: 'Syrenka', price: 1000, promoted: false},
-    {name: 'Mercedes', price: 3333, promoted: true},
-    {name: 'Ferrari', price: 6789, promoted: false}
+    {name: 'Syrenka', price: 1000, isPromoted: false},
+    {name: 'Mercedes', price: 3333, isPromoted: true},
+    {name: 'Ferrari', price: 6789, isPromoted: false}
   ];
+
+  promoted = this.products.filter(
+    x => x.isPromoted
+  );
 }
+
+
 
 interface Product {
   name: string;
   price: number;
-  promoted: boolean;
+  isPromoted: boolean;
 
 }
