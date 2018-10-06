@@ -1,10 +1,2 @@
-<h3>Produkty Promowane:</h3>
-<div>
-  <ul>
-    <div *ngFor="let product of promoted">
-        {{product.name}} {{product.price}}
-    </div>
-  </ul>
-</div>
-<h3>Produkty wszystkie:</h3>
-<div *ngFor="let product of products">{{product.name}} {{product.price}}</div>
+<app-product-list [productsList]="products"></app-product-list>>
+<app-promoted-list [productsList]="promoted"></app-promoted-list>>

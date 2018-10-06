@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Product} from './product';
 
 @Component({
   selector: 'app-root',
@@ -7,21 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   products: Product[] = [
-    {name: 'Syrenka', price: 1000, isPromoted: false},
-    {name: 'Mercedes', price: 3333, isPromoted: true},
+    {name: 'Syrenka', price: 1000, isPromoted: false, tags: ['nieprodukowany']},
+    {name: 'Mercedes', price: 3333, isPromoted: true, tags: ['promocja', 'super']},
     {name: 'Ferrari', price: 6789, isPromoted: false}
   ];
 
   promoted = this.products.filter(
     x => x.isPromoted
   );
-}
-
-
-
-interface Product {
-  name: string;
-  price: number;
-  isPromoted: boolean;
-
 }
